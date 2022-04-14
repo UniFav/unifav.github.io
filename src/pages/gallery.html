@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="black">
+	<link rel="shortcut icon" href="../img/icons/favIcon_gallery.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/global.css">
+	<link rel="stylesheet" href="../css/adapt.css">
+	<link rel="stylesheet" href="../css/gallery.css">
+	<title>Галлерея</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+				<a href="../index.html">Logo</a>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a href="gallery.html">Галлерея</a></li>
+					<li><a href="feedback.html">Отзывы</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="about_us.html">О нас</a></li>
+				</ul>
+			</div>
+			<div class="menuMin">
+				<div class="burger">
+					<span></span>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<section class="carusel">
+		<img class="previousSlide" src="../img/icons/arrowMinimal.svg" alt="">
+		<input type="button" class="button3d" value="3D">
+			<div class="perspective">
+				<div class="cube">
+					<div class="front">
+						<img src="">
+					</div>
+					<div class="back">
+						<img src="">
+					</div>
+					<div class="top">
+						<img src="">
+					</div>
+					<div class="bottom">
+						<img src="">
+					</div>
+					<div class="left">
+						<img src="">
+					</div>
+					<div class="right">
+						<img src="">
+					</div>
+				</div>
+			</div>
+		<img class="arrowDownMain" id="goToImages" src="../img/icons/arrowMinimal.svg" alt="">
+		<img class="nextSlide" src="../img/icons/arrowMinimal.svg" alt="">
+		<p class="numberOfImage"></p>
+	</section>
+
+	<div class="gridMenu" id="startImages">
+		<div class="buttons">
+			<input id="showAllButton" class="buttonsInput activeButton" type="button" value="Все">
+			<input id="canBuyButton" class="buttonsInput" type="button" value="В продаже">
+			<input id="soldButton" class="buttonsInput" type="button" value="Проданные">
+		</div>
+	</div>
+
+	<section class="gridImg" >
+
+		<div id="1" class="divImg" >
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/arab.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg" >
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img src="../img/gallery/max/arab.jpg" class="lazyMax" alt="Descr">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="2" class="divImg onSale">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/big head.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg" >
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/big head.jpg" class="lazyMax" alt="Descr">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="3" class="divImg">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/atom_skuky.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/atom_skuky.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="4" class="divImg onSale">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/child.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/child.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+		
+		<div id="5" class="divImg onSale">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/dence.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/dence.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="6" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/socrat.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/socrat.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="7" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/zaiac.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/zaiac.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="8" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/uroboros.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/uroboros.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="9" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/for_me.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/for_me.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="10" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/crown.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/crown.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="11" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/besporiadok.jpg" class="lazy" alt="" >
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/besporiadok.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="12" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/beer_flower.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/beer_flower.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="13" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/tusa.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/tusa.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="14" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/tesno_v_cosmose.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/tesno_v_cosmose.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="15" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/stechkin.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/stechkin.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="16" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/satelit.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/satelit.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="17" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/samooshushenie.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/samooshushenie.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="18" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/rybka.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/rybka.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="19" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/rot_front.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/rot_front.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="20" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/pronira.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/pronira.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="21" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/price_of_piece.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/price_of_piece.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="22" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/prepodobniy_el.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/prepodobniy_el.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="23" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/praga_ivan.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/praga_ivan.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="24" class="divImg sold">
+			<div class="divImgMin">
+				<img data-original="../img/gallery/min/poterian.jpg" class="lazy" alt="">
+			</div>
+			<div class="fullDivImg">
+				<img src="../img/icons/close.svg" class="closeIco">
+				<div class="fullImg">
+					<span class="zoom">
+						<img data-src="../img/gallery/max/poterian.jpg" class="lazyMax">
+					</span>
+					<img class="goLeft" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="goRight" src="../img/icons/arrowMinimal.svg" alt="">
+					<img class="arrowDown" src="../img/icons/arrowMinimal.svg" alt="">
+					
+				</div>
+				<div class="descriptionImg">
+
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer>
+		<p>Lorem ipsum dolor sit amet.</p>
+	</footer>
+
+	<script src="../js/plugins/jquery-3.6.0.min.js"></script>
+	<script src="../js/plugins/jquery.zoom.js"></script>
+	<script src="../js/plugins/jquery.lazyload.js"></script>
+	<script src="../js/gallery.js"></script>
+	
+</body>
+</html>

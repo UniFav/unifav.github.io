@@ -1,0 +1,250 @@
+@media screen and (max-width:967px){
+	header{
+		opacity: 0;
+		top: 0px;
+		-webkit-animation: headerAnimation 1.5s 2.5s ease-in forwards;
+				animation: headerAnimation 1.5s 2.5s ease-in forwards;
+	}
+	@-webkit-keyframes headerAnimation{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	@keyframes headerAnimation{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	body{
+		/* height: calc(100% - 5px); */
+		background-position-y: -450px; 
+		-webkit-animation: bgAnimationMin 4s ease-in forwards;
+				animation: bgAnimationMin 4s ease-in forwards;
+		
+	}
+	@keyframes bgAnimationMin {
+		0%{
+			background-size: 250% 50%;
+		}
+		100%{
+			background-size: 250% 250%;
+			background-position-y: 0px;
+		}
+	}
+	@-webkit-keyframes bgAnimationMin {
+		0%{
+			background-size: 250% 10%;
+		}
+		100%{
+			background-size: 250% 250%;
+			background-position-y: 0px;
+		}
+	}
+	footer{
+		background: rgba(255, 255, 255, 0);
+	}
+	.mainContainer{
+		width: 300px;
+		left: -200%;
+		-webkit-animation: mainContainerAnimationMin 2.5s 2.7s backwards;
+	        animation: mainContainerAnimationMin 2.5s 2.7s ease-out forwards;
+	}
+	@-webkit-keyframes mainContainerAnimationMin{
+		0%{left: -70%}
+		100%{left: 0%}
+	}
+	@keyframes mainContainerAnimationMin{
+		0%{left: -75%}
+		100%{left: 0%}
+	}
+	.mainContainer h2{
+		font-size: 70px;
+	}
+	.mainContainer p{
+		font-size: 25px;
+	}
+	.logo{
+		-webkit-animation-delay: 2s;
+		        animation-delay: 2s;
+		margin-left: 15px;
+	}
+	.main{
+		height: 100%;
+	}
+	.menu{
+		display:none;
+	}
+	.menuMin{
+		width: 100%;
+		height: 50px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.burger{
+		position: relative;
+		width: 50px;
+		height: 50px;
+		margin: 0px;
+	}
+	.burger:active{
+		background: none;
+	}
+	.burger span, .burger:after, .burger:before{
+		height: 4px;
+		width: 100%;
+		position: absolute;
+		right: 13px; 
+		background: #fff;
+	}
+	.burger span{
+		top: 27px;
+		opacity: 1;
+		transition: 0.8s;
+	}
+	.burger:after, .burger:before{
+		content: "";
+	}
+	.burger:after{
+		bottom: 1px;
+		transform: rotate(0deg);
+		transition: 0.4s;
+	}
+	.burger:before{
+		top: 10px;
+		transform: rotate(0deg);
+		transition: 0.4s;
+	}
+
+	.burger.openMenu span{
+		opacity:0; 
+    	transition: 0.5s;
+	}
+	.burger.openMenu:before {
+		transform: rotate(45deg);
+		top: 25px;
+		transition: 0.4s;
+	}
+	.burger.openMenu:after {
+		transform: rotate(-45deg);
+		bottom: 20px;
+		transition: 0.4s;
+	}
+	header.openMenu{
+		height: 100%;
+		width: 100%;
+	}
+	.menu.openMenu{
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		left: -25px;
+		top: 60px;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		opacity: 0;
+		-webkit-animation: menuAnimation 0.5s forwards;
+		        animation: menuAnimation 0.5s forwards;
+	}
+	@-webkit-keyframes menuAnimation{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	@keyframes menuAnimation{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	.menu ul{
+		width: 100%;
+		justify-content: flex-start;
+		flex-direction: column;
+		
+	}
+	.menu li{
+		justify-content: center;
+		align-items: center;
+		padding: 10% 5%;
+		background: rgba(254, 121, 34, 0.9);
+		-webkit-animation: none;
+		        animation: none;
+		opacity: 1;
+		min-width: 300px;
+		width: 100%;
+		border-top: 3px solid white;
+	}
+	.menu li:nth-child(odd){
+		background: rgba(252, 100, 95, 0.95);
+	}
+	.menu li a{
+		color: white;
+		font-size: 30px;
+	}
+				/* second screen joke */
+	.joke{
+		height: 50%;
+		background: #fb4d4e;
+	}
+	svg{
+		top: -50%;
+		height: 100%;
+	}
+	#trigger{
+		top: 1%;
+	}
+	#triggerTwo{
+		top: 0%;
+	}
+	#triggerThree{
+		top: 0%;
+	}
+	textPath{
+		fill: white;
+		font-size: 120px;
+	}
+}
+@media screen and (orientation: landscape) and (max-width:967px) {
+	.menu.openMenu{
+		background: rgba(0, 0, 0, 0.5)
+	}
+	
+	.menu ul{
+		flex-direction: row;
+		align-items: center;
+		height: 60px;
+	}
+	.menu li{
+		display: flex;
+		padding: 0;
+		justify-content: space-around;
+		align-items: center;
+		opacity: 1;
+		min-width: 100px;
+		width: 100%;
+		height: 100%;
+	}
+	.menu li a{
+		color: white;
+		font-size: 17px;
+	}
+}
+@media screen and (max-width: 420px){
+	section{
+		justify-content: center;
+		display: flex;
+	}
+}

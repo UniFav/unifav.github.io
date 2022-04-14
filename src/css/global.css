@@ -1,0 +1,109 @@
+					/* scrollbar */
+::-webkit-scrollbar{
+	width: 0px;
+	background:#bbbbbb;
+}
+::-webkit-scrollbar-thumb{
+	background: rgb(212, 95, 16);
+}
+					/* Global */
+body{
+	height: 100%;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	background: white;
+}
+header{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 10;
+}
+footer{
+	color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content:center;
+	align-items: flex-end;
+	padding: 5px;
+	height: 60px;
+	width: 100%;
+	background: #fe7923;
+}
+					/* Navigation */
+nav{
+	display: flex;
+	background: #fe7922;
+	width: 100%;
+	height: 60px;
+}
+.logo{
+	display: flex;
+	align-items: center;
+	height: 100%;
+	font-size: 35px;
+	margin-left: 50px;
+	opacity: 0;
+	-webkit-animation: opacityIn 0.5s 0.2s ease-in forwards;
+	        animation: opacityIn 0.5s 0.2s ease-in forwards;
+}
+.logo a{
+	text-transform: uppercase;
+	color: white;
+	transition: all 0.1s;
+}
+.logo a:active{
+	transform: scale(1.08);
+}
+@-webkit-keyframes opacityIn{
+	from{opacity:0}
+	to{opacity:1}
+}
+@keyframes opacityIn{
+	from{opacity:0}
+	to{opacity:1}
+}
+.menu{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	margin: 0 25px;
+}
+.menu ul{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 750px;
+}
+.menu li{
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 0;
+	opacity: 0;
+	-webkit-animation: opacityIn 0.5s 0.2s ease-in forwards;
+	        animation: opacityIn 0.5s 0.2s ease-in forwards;
+}
+.menu li:nth-child(2){
+	-webkit-animation-delay: 0.3s;
+	        animation-delay: 0.3s;
+}
+.menu li:nth-child(3){
+	-webkit-animation-delay: 0.4s;
+	        animation-delay: 0.4s;
+}
+.menu li:nth-child(4){
+	-webkit-animation-delay: 0.5s;
+	        animation-delay: 0.5s;
+}
+.menu li:nth-child(5){
+	-webkit-animation-delay: 0.6s;
+	        animation-delay: 0.6s;
+}
+.menu li a{
+	font-size: 18px;
+	color: white;
+	text-transform: uppercase;
+	transition: all 0.1s;
+}
+.menu li a:active{
+	transform: scale(1.08);
+}

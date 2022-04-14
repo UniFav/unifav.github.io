@@ -373,7 +373,7 @@ footer{
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.arrowDown{
+.arrowDown, .arrowDownMain{
 	position: absolute;
 	right: 6vw;
 	width: 3vw;
@@ -381,7 +381,7 @@ footer{
 	-webkit-animation: arrowIn 1s ease-in forwards, arrowAnimation 1s ease-in-out alternate infinite;
 	        animation: arrowIn 1s ease-in forwards, arrowAnimation 1s ease-in-out alternate infinite;
 }
-.arrowDown:hover{
+.arrowDown:hover, .arrowDownMain:hover{
 	cursor: pointer;
 }
 @-webkit-keyframes arrowIn{

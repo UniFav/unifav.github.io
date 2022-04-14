@@ -1,0 +1,143 @@
+/* main */
+body{
+	background: url("../img/bgFluid.svg") no-repeat;
+	background-position-y: -720px;
+	-webkit-animation: bgAnimation 4s ease-in forwards;
+	        animation: bgAnimation 4s ease-in forwards;
+}
+@-webkit-keyframes bgAnimation{
+	0%{
+		background-size: 100% 100%;
+	}
+	100%{
+		background-position-y: 0px;
+		background-size: 100% 285%;
+	}
+}
+@keyframes bgAnimation{
+	0%{
+		background-size: 100% 100%;
+	}
+	100%{
+		background-position-y: 0px;
+		background-size: 100% 285%;
+	}
+}
+footer{
+	background: #fd732a;
+	position: relative;
+	top:-60px;
+	opacity: 0;
+	-webkit-animation: bgJokeAnimation 0.7s 3.8s ease-in forwards;
+	        animation: bgJokeAnimation 0.7s 3.8s ease-in forwards;
+}
+/* Navigation */
+nav{
+	background: rgba(255, 255, 255, 0);
+}
+.logo{
+	-webkit-animation-delay: 2.3s;
+	        animation-delay: 2.3s;
+}
+.menu li{
+	-webkit-animation-delay: 2.3;
+	        animation-delay: 2.3;
+}
+.menu li:nth-child(1){
+	-webkit-animation-delay: 2.3s;
+	        animation-delay: 2.3s;
+}
+.menu li:nth-child(2){
+	-webkit-animation-delay: 2.5s;
+	        animation-delay: 2.5s;
+}
+.menu li:nth-child(3){
+	-webkit-animation-delay: 2.7s;
+	        animation-delay: 2.7s;
+}
+.menu li:nth-child(4){
+	-webkit-animation-delay: 2.9s;
+	        animation-delay: 2.9s;
+}
+.menu li:nth-child(5){
+	-webkit-animation-delay: 3.1s;
+	        animation-delay: 3.1s;
+}
+/* First screen main */
+.main{
+	width: 100%;
+	height: 100%;
+}
+.mainContainer{
+	position: relative;
+	top: 40%;
+	left: 10%;
+	width: 400px;
+	text-align: center;
+	color: white;
+	opacity: 1;
+	-webkit-animation: mainContainerAnimation 2.3s 2.7s ease-out backwards;
+	        animation: mainContainerAnimation 2.3s 2.7s ease-out backwards;
+}
+@-webkit-keyframes mainContainerAnimation{
+	0%{left: -40%}
+	100%{left: 10%}
+}
+@keyframes mainContainerAnimation{
+	0%{left: -40%}
+	100%{left: 10%}
+}
+.mainContainer h2{
+	font-size: 100px;
+}
+.mainContainer p{
+	font-size: 45px;
+}
+/* magic animation */
+#trigger{
+	position: absolute;
+	top: 1%;
+}
+#triggerTwo{
+	position: absolute;
+	top: -85%;
+}
+#triggerThree{
+	position: absolute;
+	top: -25%;
+}
+/* second screen joke */
+.joke{
+	position: relative;
+	height: 100%;
+	background: linear-gradient(#fc544c 55%, #fe7922);
+	opacity: 0;
+	-webkit-animation: bgJokeAnimation 0.7s 3.4s ease-in forwards;
+	        animation: bgJokeAnimation 0.7s 3.4s ease-in forwards;
+}
+@-webkit-keyframes bgJokeAnimation{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+@keyframes bgJokeAnimation{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+svg{
+	position: relative;
+	width: 100%;
+	height: 90%;
+
+}
+textPath{
+	fill: white;
+	font-size:45px;
+}

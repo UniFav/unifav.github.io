@@ -188,6 +188,7 @@ var interactive3d = true;
 			var caruselHeight = $('.carusel').height();
 			var	X = caruselWidth*1.3 - event.pageX*1.5;
 			var	Y = caruselHeight*1.7 - event.pageY*2.5;
+			console.log(X + ' ' + Y)
 			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
 			if(interactive3d==false){
 				$(this).off();
@@ -200,7 +201,7 @@ var interactive3d = true;
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
 			var	X = caruselWidth - event.alpha*1.5;
-			var	Y = caruselHeight - event.beta*3;
+			var	Y = caruselHeight - (event.beta/90)*caruselHeight;
 			// alert(event.beta + ' ' + event.gamma);
 			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
 			// console.log("ok")

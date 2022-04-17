@@ -140,17 +140,19 @@ var interactive3d = true;
 			if(typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
 				requestAccess();
 			}
-			if(interactive3d){
-				window.addEventListener("deviceorientation", cubeMin3D);
-			}
-			else{
 				window.removeEventListener("deviceorientation", function(event) {
 					var caruselWidth = $('.carusel').width();
 					var caruselHeight = $('.carusel').height();
 					var	X = caruselWidth - (event.gamma/20)*caruselWidth;
 					var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
 					// alert(event.beta + ' ' + event.gamma);
-					$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+					if(interactive3d){
+						$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+					}
+					else{
+						$('.perspective').removeAttr('style')
+					}
+					
 					// console.log("ok")
 					// if(interactive3d==false){
 					// 	$(this).off();
@@ -158,7 +160,10 @@ var interactive3d = true;
 					$('.logo a').text(event.beta + '  ' + event.gamma);
 					interactive3d = true;
 				});
-			}
+				if(interactive3d)
+				interactive3d = false;
+				else
+				interactive3d = true;
 		}
 		else{
 
@@ -191,23 +196,6 @@ var interactive3d = true;
 					
 	}
 	});
-
-
-	function cubeMin3D(event) {
-		var caruselWidth = $('.carusel').width();
-		var caruselHeight = $('.carusel').height();
-		var	X = caruselWidth - (event.gamma/20)*caruselWidth;
-		var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
-		// alert(event.beta + ' ' + event.gamma);
-		$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
-		// console.log("ok")
-		// if(interactive3d==false){
-		// 	$(this).off();
-		// }
-		$('.logo a').text(event.beta + '  ' + event.gamma);
-		interactive3d = false;
-	}
-
 
 	function requestAccess(){
 		DeviceOrientationEvent.requestPermission().then(response => {

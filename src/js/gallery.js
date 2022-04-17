@@ -206,6 +206,7 @@ var interactive3d = true;
 		}).catch(console.error);
 	}
 
+	if($('.smallOrBig').is(':visible')){
 		$('.carusel').on( "mousemove", function( event ) {
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
@@ -217,7 +218,13 @@ var interactive3d = true;
 				$(this).off();
 			}
 		});	
-		console.log('NOT PK')
+	}
+	else{
+		$('.button3d').css({
+			textDecoration: 'line-through',
+			color: "rgb(231, 54, 54)",
+		});
+	}
 
 		// window.addEventListener("deviceorientation", function(event) {
 		// 	var caruselWidth = $('.carusel').width();

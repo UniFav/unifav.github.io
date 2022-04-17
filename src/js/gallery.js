@@ -174,17 +174,19 @@ var interactive3d = true;
 				$(this).off();
 			}
 		});	
+		console.log('NOT PK')
 	}
-	else{
-		window.on("deviceorientationchange", function( event ) {
+	else if(!$('.smallOrBig').is(':visible')){
+		window.addEventListener("deviceorientation", function(event) {
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
 			var	X = caruselWidth*1.3 - event.beta*1.5;
 			var	Y = caruselHeight*1.7 - event.gamma*2.5;
 			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
-			if(interactive3d==false){
-				$(this).off();
-			}
+			console.log("ok")
+			// if(interactive3d==false){
+			// 	$(this).off();
+			// }
 		});
 	}
 

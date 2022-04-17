@@ -134,17 +134,43 @@ function loadImgCube(firstImgId, goForward) {
 		$cube.children('.bottom').children('img').attr('src', '')
 	}
 }
-if($('.smallOrBig').is(':visible'))
 var interactive3d = true;
-else
-var interactive3d = false;
 	$('.button3d').click(function() {
 		if(!$('.smallOrBig').is(':visible')){
 			if(typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
 				requestAccess();
 			}
 			if(interactive3d){
-
+				window.addEventListener("deviceorientation", function(event) {
+					var caruselWidth = $('.carusel').width();
+					var caruselHeight = $('.carusel').height();
+					var	X = caruselWidth - (event.gamma/20)*caruselWidth;
+					var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
+					// alert(event.beta + ' ' + event.gamma);
+					$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+					// console.log("ok")
+					// if(interactive3d==false){
+					// 	$(this).off();
+					// }
+					$('.logo a').text(event.beta + '  ' + event.gamma);
+					interactive3d = false;
+				});
+			}
+			else{
+				window.removeEventListener("deviceorientation", function(event) {
+					var caruselWidth = $('.carusel').width();
+					var caruselHeight = $('.carusel').height();
+					var	X = caruselWidth - (event.gamma/20)*caruselWidth;
+					var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
+					// alert(event.beta + ' ' + event.gamma);
+					$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+					// console.log("ok")
+					// if(interactive3d==false){
+					// 	$(this).off();
+					// }
+					$('.logo a').text(event.beta + '  ' + event.gamma);
+					interactive3d = true;
+				});
 			}
 		}
 		else{
@@ -187,8 +213,6 @@ var interactive3d = false;
 		}).catch(console.error);
 	}
 
-	alert("IT SWORK");
-	if($('.smallOrBig').is(':visible')){
 		$('.carusel').on( "mousemove", function( event ) {
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
@@ -201,9 +225,8 @@ var interactive3d = false;
 			}
 		});	
 		console.log('NOT PK')
-	}
-	else if(!$('.smallOrBig').is(':visible')){
-		$(window).on("deviceorientation", function(event) {
+
+		window.addEventListener("deviceorientation", function(event) {
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
 			var	X = caruselWidth - (event.gamma/20)*caruselWidth;
@@ -216,7 +239,7 @@ var interactive3d = false;
 			// }
 			$('.logo a').text(event.beta + '  ' + event.gamma);
 		});
-	}
+
 
 	loadImgCube(0, true);
 	var lastId = $('.divImg').length;

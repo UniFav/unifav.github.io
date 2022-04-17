@@ -1,0 +1,91 @@
+.blocks{
+	/* background: #000; */
+	position: relative;
+	top: 60px;
+	width: 100%;
+	min-height: calc(100% - 60px);
+	padding: 0px 100px;
+	background: linear-gradient( #fe7922, #fc544c 55%);
+	padding-top: 25px;
+	overflow: hidden;
+}
+.block{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	/* background: rgb(222, 79, 79); */
+	background: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	height: 300px;
+	padding: 0px 20px;
+	margin-bottom: 25px;
+	border-radius: 40px;
+}
+.block:nth-child(odd){
+	animation: inLeft 1.2s ease-in forwards;
+}
+.block:nth-child(even){
+	animation: inRight 1.2s ease-in forwards;
+}
+@keyframes inLeft{
+	0%{left: -100vw; opacity: 0;}
+	100%{left: 0px}
+}
+@keyframes inRight{
+	0%{right: -100vw; opacity: 0;}
+	100%{right: 0px}
+}
+.block h2{
+	font-size: 22px;
+	color: rgb(176, 106, 27);
+	/* width: 100%; */
+}
+.person{
+	width: 250px;
+	height: 250px;
+}
+.person img{
+	object-fit: cover;
+	width: 250px;
+	height: 250px;
+	border: 3px solid white;
+	border-radius: 100%;
+}
+.text{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	max-width: 100%;
+	padding: 0px 30px;
+}
+.text p{
+	font-size: 17px;
+}
+.nameImage{
+	position: absolute;
+	top: 40px;
+	right: 300px;
+	/* border: 3px solid white; */
+	padding: 5px;
+	border-radius: 10px;
+}
+.namePerson{
+	position: absolute;
+	bottom: 40px;
+	left: 260px;
+	/* border: 3px solid white; */
+	padding: 5px;
+	border-radius: 10px;
+}
+.image{
+	min-width: 250px;
+	height: 250px;
+}
+.image img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	border: 3px solid white;
+	border-radius: 25px;
+}

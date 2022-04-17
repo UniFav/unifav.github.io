@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../css/reset.css">
 	<link rel="stylesheet" href="../css/global.css">
 	<link rel="stylesheet" href="../css/adapt.css">
+	<link rel="stylesheet" href="../css/contacts.css">
 	<title>Document</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
 				<ul>
 					<li><a href="gallery.html">Галлерея</a></li>
 					<li><a href="feedback.html">Отзывы</a></li>
-					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="contacts.html" style="border-bottom: 3px solid white ;">Контакты</a></li>
 					<li><a href="about_us.html">О нас</a></li>
 				</ul>
 			</div>
@@ -31,5 +32,32 @@
 			</div>
 		</nav>
 	</header>
+	<section class="contacts">
+		<div class="info">
+			<div class="mainInfo">
+				<h2>Мои контакты</h2>
+				<p>Email: example@example.com</p>
+				<div class="telegram">
+					<a href=""><img src="../img/icons/telegram.svg" alt=""></a>
+				</div>
+			</div>
+		</div>
+		<div class="formWrite">
+			<form action="">
+				<h2>Обратная связь</h2>
+				<input type="email" name="email" placeholder="Ваш email">
+				<div class="userContacts">
+					<input type="text" name="name" placeholder="Как вас зовут" required>
+					<input id="phone" type="tel" name="phone-number" placeholder="+7(___)___-__-__">
+				</div>
+				<textarea name="message" placeholder="Ваше сообщение"></textarea>
+				<input type="submit">
+			</form>
+		</div>
+	</section>
+
+	<script src="../js/plugins/jquery-3.6.0.min.js"></script>
+	<script src="../js/plugins/jquery.maskedinput.min.js"></script>
+	<script src="../js/contacts.js"></script>
 </body>
 </html>

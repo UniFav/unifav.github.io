@@ -7,7 +7,7 @@
 	}
 	goLazyLoad();
 	$('.arrowDownMain').click(function() {
-		$('body, html').animate({scrollTop: $(window).height()}, 800);
+		$('body, html').animate({scrollTop: ($(window).height()+270)}, 800);
 	});
 // сортировка
 	// в продаже                         класс onSale
@@ -163,16 +163,30 @@ var interactive3d = true;
 			});	
 		}
 	});
-	$('.carusel').on( "mousemove", function( event ) {
-		var caruselWidth = $('.carusel').width();
-		var caruselHeight = $('.carusel').height();
-		var	X = caruselWidth*1.3 - event.pageX*1.5;
-		var	Y = caruselHeight*1.7 - event.pageY*2.5;
-		$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
-		if(interactive3d==false){
-			$(this).off();
-		}
-	});	
+	if($('.smallOrBig').is(':visible')){
+		$('.carusel').on( "mousemove", function( event ) {
+			var caruselWidth = $('.carusel').width();
+			var caruselHeight = $('.carusel').height();
+			var	X = caruselWidth*1.3 - event.pageX*1.5;
+			var	Y = caruselHeight*1.7 - event.pageY*2.5;
+			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+			if(interactive3d==false){
+				$(this).off();
+			}
+		});	
+	}
+	else{
+		window.on("deviceorientationchange", function( event ) {
+			var caruselWidth = $('.carusel').width();
+			var caruselHeight = $('.carusel').height();
+			var	X = caruselWidth*1.3 - event.beta*1.5;
+			var	Y = caruselHeight*1.7 - event.gamma*2.5;
+			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+			if(interactive3d==false){
+				$(this).off();
+			}
+		});
+	}
 
 	loadImgCube(0, true);
 	var lastId = $('.divImg').length;
@@ -186,15 +200,19 @@ var interactive3d = true;
 		if(countSlide == 1 && countImg == 1){
 			countImg = lastId;
 			var goLastId = lastId;
-			countSlide = 1;
+			countSlide = 6;
+
+			countSlide = lastId;
+			while(countSlide>=6){countSlide -=6;}
+			++countSlide;
 			countImg = goLastId + 1;
-			loadImgCube(goLastId +1, false);
+			loadImgCube(goLastId +(8 - countSlide), false);
 			var goToLastId = true;
 			$('.numberOfImage').text(lastId);
 		}
 		if(countSlide == 1){
 			$('.cube').css({
-				transform: 'rotateX(-90deg) rotateY(-180deg) rotateZ(180deg) translate3d(0px , -200px, -200px)',
+				transform: 'rotateX(-90deg) rotateY(-180deg) rotateZ(180deg) translate3d(0px , -20vh, -200px)',
 			});
 			if(countImg > 1) 
 			loadImgCube(countImg, false);
@@ -233,6 +251,7 @@ var interactive3d = true;
 			if(goToLastId == true){
 			countSlide = lastId;
 			while(countSlide>6){countSlide -=6;}
+			++countSlide;
 			goToLastId = false;
 			}
 		}
@@ -300,7 +319,7 @@ var interactive3d = true;
 
 	$('.cube').children('div').click(function() {
 		var srcToGo = $(this).children('img').attr('src')
-		var tempIdToGo = $('.gridImg').children('.divImg').children('.divImgMin').children('img[src="' + srcToGo +'"]');
+		var tempIdToGo = $('.gridImg').children('.divImg').children('.divImgMin').children('img[data-original="' + srcToGo +'"]');
 		var idToGo = tempIdToGo.parent();
 		openFullImg(idToGo);
 	})
@@ -366,10 +385,9 @@ var interactive3d = true;
 			$(goImgId).children('.fullDivImg').addClass('fullDivImgOpen');
 		}
 		$(this).parents().eq(1).removeClass('fullDivImgOpen');
-		
-		addZoom($(goImgId).children('.fullDivImg').children('.fullImg').children('.zoom'));
 
 		lazyMax($(goImgId).children('.fullDivImg').children('.fullImg').children('.zoom').children('img'));
+		addZoom($(goImgId).children('.fullDivImg').children('.fullImg').children('.zoom'));
 	});
 
 	// правая
@@ -392,8 +410,8 @@ var interactive3d = true;
 			$(goImgId).children('.fullDivImg').addClass('fullDivImgOpen');
 		}
 		$(this).parents().eq(1).removeClass('fullDivImgOpen');
-		addZoom($(goImgId).children('.fullDivImg').children('.fullImg').children('.zoom'));
 		lazyMax($(goImgId).children('.fullDivImg').children('.fullImg').children('.zoom').children('img'));
+		addZoom($(goImgId).children('.fullDivImg').children('.fullImg').children('.zoom'));
 	});
 
 // закрытие полной картины по крестику

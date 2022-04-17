@@ -216,6 +216,7 @@
 		fill: white;
 		font-size: 120px;
 	}
+
 }
 @media screen and (orientation: landscape) and (max-width:967px) {
 	.menu.openMenu{

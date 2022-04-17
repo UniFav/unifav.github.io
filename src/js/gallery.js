@@ -134,11 +134,17 @@ function loadImgCube(firstImgId, goForward) {
 		$cube.children('.bottom').children('img').attr('src', '')
 	}
 }
+if($('.smallOrBig').is(':visible'))
 var interactive3d = true;
+else
+var interactive3d = false;
 	$('.button3d').click(function() {
 		if(!$('.smallOrBig').is(':visible')){
 			if(typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
 				requestAccess();
+			}
+			if(interactive3d){
+
 			}
 		}
 		else{
@@ -197,7 +203,7 @@ var interactive3d = true;
 		console.log('NOT PK')
 	}
 	else if(!$('.smallOrBig').is(':visible')){
-		window.addEventListener("deviceorientation", function(event) {
+		$(window).on("deviceorientation", function(event) {
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
 			var	X = caruselWidth - (event.gamma/20)*caruselWidth;

@@ -140,7 +140,7 @@ var interactive3d = true;
 			if(typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
 				requestAccess();
 			}
-				window.removeEventListener("deviceorientation", function(event) {
+				window.addEventListener("deviceorientation", function(event) {
 					var caruselWidth = $('.carusel').width();
 					var caruselHeight = $('.carusel').height();
 					var	X = caruselWidth - (event.gamma/20)*caruselWidth;

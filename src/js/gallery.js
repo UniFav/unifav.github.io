@@ -1,5 +1,13 @@
 "use strict"
 
+
+$('.burger').click(function() {
+	$('.burger').toggleClass('openMenu');
+	$('.menu').toggleClass('openMenu');
+	$('header').toggleClass('openMenu');
+	$('nav').toggleClass('openMenu');
+});
+
 	function goLazyLoad() {
 		$('img.lazy').lazyload({
 			threshold: 300,

@@ -437,6 +437,9 @@ footer{
 }
 
 @media screen and (max-width:967px){
+	.smallOrBig{
+		display: none;
+	}
 	.gridImg{
 		width: auto;
 		max-height: 1000%;
@@ -570,9 +573,6 @@ footer{
 }
 .previousSlide:hover{
 	transform: rotate(-90deg) scale(0.3);
-}
-.button3d{
-	display: none;
 }
 .numberOfImage{
 	left: 7%;

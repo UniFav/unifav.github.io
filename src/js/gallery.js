@@ -200,7 +200,7 @@ var interactive3d = true;
 		window.addEventListener("deviceorientation", function(event) {
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
-			var	X = caruselWidth + (event.alpha/20)*caruselWidth;
+			var	X = caruselWidth - (event.gamma/20)*caruselWidth;
 			var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
 			// alert(event.beta + ' ' + event.gamma);
 			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');

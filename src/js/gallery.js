@@ -134,36 +134,28 @@ function loadImgCube(firstImgId, goForward) {
 		$cube.children('.bottom').children('img').attr('src', '')
 	}
 }
+var cube3dMin = function(event) {
+	var caruselWidth = $('.carusel').width();
+	var caruselHeight = $('.carusel').height();
+	var	X = caruselWidth - (event.gamma/20)*caruselWidth;
+	var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
+	$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+	$('.logo a').text(event.beta + '  ' + event.gamma);
+}
 var interactive3d = true;
 	$('.button3d').click(function() {
 		if(!$('.smallOrBig').is(':visible')){
 			if(typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
 				requestAccess();
 			}
-				window.addEventListener("deviceorientation", function(event) {
-					var caruselWidth = $('.carusel').width();
-					var caruselHeight = $('.carusel').height();
-					var	X = caruselWidth - (event.gamma/20)*caruselWidth;
-					var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
-					// alert(event.beta + ' ' + event.gamma);
-					if(interactive3d){
-						$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
-					}
-					else{
-						$('.perspective').removeAttr('style')
-					}
-					
-					// console.log("ok")
-					// if(interactive3d==false){
-					// 	$(this).off();
-					// }
-					$('.logo a').text(event.beta + '  ' + event.gamma);
-					interactive3d = true;
-				});
-				if(interactive3d)
+			if(interactive3d){
+				window.addEventListener("deviceorientation", cube3dMin);
 				interactive3d = false;
-				else
+			}
+			else{
+				window.removeEventListener("deviceorientation", cube3dMin);
 				interactive3d = true;
+			}
 		}
 		else{
 

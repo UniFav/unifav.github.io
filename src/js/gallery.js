@@ -140,7 +140,7 @@ var cube3dMin = function(event) {
 	var	X = caruselWidth - (event.gamma/20)*caruselWidth;
 	var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
 	$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
-	$('.logo a').text(event.beta + '  ' + event.gamma);
+	// $('.logo a').text(event.beta + '  ' + event.gamma);
 }
 var interactive3d = true;
 	$('.button3d').click(function() {
@@ -150,10 +150,19 @@ var interactive3d = true;
 			}
 			if(interactive3d){
 				window.addEventListener("deviceorientation", cube3dMin);
+				$('.button3d').css({
+					textDecoration: 'none',
+					color: 'white',
+				});
 				interactive3d = false;
 			}
 			else{
 				window.removeEventListener("deviceorientation", cube3dMin);
+				$('.perspective').removeAttr('style')
+				$('.button3d').css({
+					textDecoration: 'line-through',
+					color: "rgb(231, 54, 54)",
+				});
 				interactive3d = true;
 			}
 		}

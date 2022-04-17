@@ -199,15 +199,15 @@ var interactive3d = true;
 		window.addEventListener("deviceorientation", function(event) {
 			var caruselWidth = $('.carusel').width();
 			var caruselHeight = $('.carusel').height();
-			var	X = caruselWidth*1.3 - event.beta*1.5;
-			var	Y = caruselHeight*1.7 - event.gamma*2.5;
+			var	X = caruselWidth - event.alpha*1.5;
+			var	Y = caruselHeight - event.beta*3;
 			// alert(event.beta + ' ' + event.gamma);
 			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
 			// console.log("ok")
 			// if(interactive3d==false){
 			// 	$(this).off();
 			// }
-			$('.logo a').text(event.beta + '  ' + event.gamma);
+			$('.logo a').text(event.beta + '  ' + event.alpha);
 		});
 	}
 

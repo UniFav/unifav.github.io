@@ -163,6 +163,7 @@ var interactive3d = true;
 			});	
 		}
 	});
+	alert("IT SWORK");
 	if($('.smallOrBig').is(':visible')){
 		$('.carusel').on( "mousemove", function( event ) {
 			var caruselWidth = $('.carusel').width();

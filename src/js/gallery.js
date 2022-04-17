@@ -226,19 +226,19 @@ var interactive3d = true;
 		});	
 		console.log('NOT PK')
 
-		window.addEventListener("deviceorientation", function(event) {
-			var caruselWidth = $('.carusel').width();
-			var caruselHeight = $('.carusel').height();
-			var	X = caruselWidth - (event.gamma/20)*caruselWidth;
-			var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
-			// alert(event.beta + ' ' + event.gamma);
-			$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
-			// console.log("ok")
-			// if(interactive3d==false){
-			// 	$(this).off();
-			// }
-			$('.logo a').text(event.beta + '  ' + event.gamma);
-		});
+		// window.addEventListener("deviceorientation", function(event) {
+		// 	var caruselWidth = $('.carusel').width();
+		// 	var caruselHeight = $('.carusel').height();
+		// 	var	X = caruselWidth - (event.gamma/20)*caruselWidth;
+		// 	var	Y = caruselHeight - (event.beta/90)*caruselHeight*2;
+		// 	// alert(event.beta + ' ' + event.gamma);
+		// 	$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
+		// 	// console.log("ok")
+		// 	// if(interactive3d==false){
+		// 	// 	$(this).off();
+		// 	// }
+		// 	$('.logo a').text(event.beta + '  ' + event.gamma);
+		// });
 
 
 	loadImgCube(0, true);

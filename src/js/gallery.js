@@ -136,6 +136,13 @@ function loadImgCube(firstImgId, goForward) {
 }
 var interactive3d = true;
 	$('.button3d').click(function() {
+		if(!$('.smallOrBig').is(':visible')){
+			if(typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) == 'function'){
+				requestAccess();
+			}
+		}
+		else{
+
 		if(interactive3d)
 		{
 			interactive3d = false;
@@ -162,7 +169,18 @@ var interactive3d = true;
 				$('.perspective').attr('style','perspective-origin:' + X + 'px ' + Y + 'px');
 			});	
 		}
+					
+	}
 	});
+
+	function requestAccess(){
+		DeviceOrientationEvent.requestPermission().then(response => {
+			if(response == 'granted'){
+				permissionGranted = true;
+			}
+		}).catch(console.error);
+	}
+
 	alert("IT SWORK");
 	if($('.smallOrBig').is(':visible')){
 		$('.carusel').on( "mousemove", function( event ) {

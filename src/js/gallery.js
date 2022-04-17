@@ -207,6 +207,7 @@ var interactive3d = true;
 			// if(interactive3d==false){
 			// 	$(this).off();
 			// }
+			$('.logo a').text(event.beta + '  ' + event.gamma);
 		});
 	}
 
